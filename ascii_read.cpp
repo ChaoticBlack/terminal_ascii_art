@@ -47,38 +47,77 @@ void clearScreen(void) {
 
 int main()
 {
-	//string i ="67";
-	//string filename= "newsun/"+i+".txt";
-	int i =0;
-	while(1)
+	char n;
+	cout<<"Select the pattern you want to see: Kaleidoscope or Liquid Fireworks"<<endl;
+	cout<<"Press 1 for Kaleidoscope, press 2 for Liquid Fireworks"<<endl;
+	cin>>n;
+	if(n=='1')
 	{
-		string fileNumber = to_string(i);
-		string filename = "pattern/"+fileNumber+".txt";
-		ifstream file(filename);
-		string word;
-		while(getline(file,word))
+		int i =0;
+		while(1)
 		{
-			cout<<word<<endl;
+			string fileNumber = to_string(i);
+			string filename = "Kaleidoscope/"+fileNumber+".txt";
+			ifstream file(filename);
+			string word;
+			while(getline(file,word))
+			{
+				cout<<word<<endl;
+			}
+			usleep(100000);
+	        clearScreen();
+			//i++;
+			if(i==30)
+				i=0;
+			i++;
 		}
-		usleep(100000);
-        clearScreen();
-		//i++;
-		if(i==30)
-			i=0;
-		i++;
 	}
-	// ifstream file(filename);
-	// string word;
-	// while(getline(file,word))
-	// {
-	// 	cout<<word<<endl;
-	// }
+	else if(n== '2')
+	{
+		int i =0;
+		while(1)
+		{
+			string fileNumber = to_string(i);
+			string filename = "Liquid_Fireworks/"+fileNumber+".txt";
+			ifstream file(filename);
+			string word;
+			while(getline(file,word))
+			{
+				cout<<word<<endl;
+			}
+			usleep(100000);
+        	clearScreen();
+			//i++;
+			if(i==37)
+				i=0;
+			i++;
+		}
+	}
+	else
+		cout<<"You Trickster, next time, please enter a valid input!"<<endl;
 	return 0;
 }
 
 
 
 
-
+	// int i =0;
+	// while(1)
+	// {
+	// 	string fileNumber = to_string(i);
+	// 	string filename = "pattern/"+fileNumber+".txt";
+	// 	ifstream file(filename);
+	// 	string word;
+	// 	while(getline(file,word))
+	// 	{
+	// 		cout<<word<<endl;
+	// 	}
+	// 	usleep(100000);
+ //        clearScreen();
+	// 	//i++;
+	// 	if(i==30)
+	// 		i=0;
+	// 	i++;
+	// }
 
 //loop the folder to open each file
